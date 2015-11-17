@@ -1,0 +1,64 @@
+﻿
+
+create table empresa(
+	id SERIAL NOT NULL,
+	razaoSocial varchar(64) NOT NULL,
+	cnpj varchar(32) NOT NULL UNIQUE,
+	logradouro varchar(64),
+	municipio varchar(64),
+	numero varchar(10),
+	complemento varchar(64),
+	bairro varchar(64),
+	cep varchar(16),
+	telefone varchar(32),
+	email varchar(254) NOT NULL,
+	site varchar(254),
+	usuario varchar(20) NOT NULL UNIQUE,
+	senha varchar(128),
+	createdAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	updateAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL
+	
+);
+alter table empresa add constraint empresa_pk primary key (id);
+
+
+create table leilao(
+	id SERIAL NOT NULL, 
+	codigo integer,
+	descricao varchar(60) NOT NULL,
+	vendedor integer NOT NULL,
+	inicioPrevisto timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	createdAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	updateAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL	
+);
+alter table leilao add constraint leilao_pk primary key (id);
+
+create table lote(
+	id SERIAL NOT NULL,
+	numeroLote integer,
+	descricao varchar(60) NOT NULL,
+	quantidade numeric NOT NULL,
+	valorInicial numeric,
+	unidade varchar(128) NOT NULL,
+	leilao integer NOT NULL,
+	createdAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	updateAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+alter table lote add constraint lote_pk primary key (id);
+alter table lote add foreign key (leilao) references leilao(id);
+
+create table comprador(
+	empresa integer,
+	leilao integer
+);
+alter table comprador add foreign key (empresa) references empresa(id);
+alter table comprador add foreign key (leilao) references leilao(id);
+alter table comprador add constraint comprador_pk primary key (empresa, leilao);
+
+create table unidade(
+	id SERIAL,
+	nome varchar(128) NOT NULL,
+	createdAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	updateAt timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL
+); 
+alter table unidade add constraint unidade_pk primary key (id);

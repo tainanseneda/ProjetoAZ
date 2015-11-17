@@ -1,0 +1,14 @@
+{
+  "name": "kendoui",
+  "version": "2015.2.805",
+  "_release": "2015.2.805",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2015.2.805",
+    "commit": "c1254bfb29760404d801d3109fb2b4bf2f431ea8"
+  },
+  "_source": "http://git.azi.com.br/az-reuso/kendoui.git",
+  "_target": "v2015.2.805",
+  "_originalSource": "http://git.azi.com.br/az-reuso/kendoui.git",
+  "_direct": true
+}

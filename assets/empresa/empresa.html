@@ -1,0 +1,32 @@
+<div ng-app="appAz" ng-controller="empresaController">
+    <div>
+        <div id="idRefresh" kendo-grid k-options="gridOptions"></div>
+    </div>
+    <input type="button" value="Nova Empresa" ng-click="visivel=true"/>
+    <hr>
+    <div ng-show="visivel">
+        <form>
+            Razão Social: <input ng-model="empresa.razaosocial" class="k-textbox" type="text" required
+                                 data-required-msg="Razão Social é necessário" placeholder="Razão Social" value=""/><br>
+            CNPJ: <input ng-model="empresa.cnpj" class="k-textbox" min="14" max="14" type="text" placeholder="cnpj" required
+                         data-validmask-msg="CNPJ é necessário"/><br>
+            Logradouro: <input ng-model="empresa.logradouro" class="k-textbox" type="text" placeholder="logradouro"
+                               ng-model="empresa.logradouro"/>
+            Número: <input ng-model="empresa.numero" class="k-textbox" type="text" placeholder="número"/>
+            Bairro: <input ng-model="empresa.bairro" class="k-textbox" type="text" placeholder="bairro"/>
+            Complemento <input ng-model="empresa.complemento" class="k-textbox" type="text"
+                               placeholder="{{tela.complemento}}"/><br>
+            CEP: <input ng-model="empresa.cep" class="k-textbox" type="text" placeholder="cep"/>
+            Cidade/UF: <input ng-model="empresa.municipio" class="k-textbox" type="text" placeholder="cidade-uf"/><br>
+            Telefone: <input ng-model="empresa.telefone" class="k-textbox" type="text" placeholder="(00)0000-0000"/><br>
+            Email: <input ng-model="empresa.email" class="k-textbox" type="email" placeholder="email" required
+                          data-email-msg="Formato de email inválido"/><br>
+            Site: <input ng-model="empresa.site" class="k-textbox" type="url" placeholder="site"
+                         data-url-msg="Por favor forneça um endereço válido, ex: http://www.site.com/"/><br>
+            Usuário: <input ng-model="empresa.usuario" required data-required-msg="Informe seu nome de usuário"
+                            type="text" class="k-textbox" placeholder="usuário"/><br>
+            Senha: <input ng-model="empresa.senha" type="password" class="k-textbox" placeholder="senha"/><br>
+            <input type="submit" ng-click="visivel = adicionaEmpresa()" value="Salvar"/>
+        </form>
+    </div>
+</div>

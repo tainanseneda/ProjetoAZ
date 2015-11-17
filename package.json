@@ -1,0 +1,16 @@
+{
+  "name": "az-avaliacao",
+  "version": "1.0.0",
+  "description": "Projeto para avaliação e seleção de candidatos a programadores javascript.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "Todos direitos reservados a AZ Informática",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "express": "~4.2.0",
+    "mongoose": "~3.8.1",
+    "pg": "^4.4.3"
+  }
+}

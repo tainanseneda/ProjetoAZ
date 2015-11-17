@@ -1,0 +1,25 @@
+<div ng-app="appAz" ng-controller="leilaoController" ng="200px">
+    <div kendo-list-view id="listView" k-data-source="source">
+
+        <div class="product" k-template>
+            <h3>Empresa: {{dataItem.razaosocial}}</h3>
+            <br>
+            <p><b>Data de início do leilão:</b> {{dataItem.inicioprevisto | date:'yyyy-MM-dd HH:mm:ss '}}</p>
+            <p><b>Valor a ser movimentado:</b> {{dataItem.quantidade*dataItem.valorinicial | currency:"R$"}}</p>
+<hr>
+
+        </div>
+    </div>
+    <div kendo-pager k-data-source="source"></div>
+    <input type="button" value="Novo leilão" ng-click="visivel = true"/>
+    <hr>
+    <div ng-show="visivel">
+        <form>
+            Código: <input ng-model="leilao.codigo" class="k-textbox" type ="number" placeholder="Código" /><br>
+            Descrição: <input type="text" required data-required-msg="Informe a descrição do leilão" ng-model="leilao.descricao" class="k-textbox" placeholder="Descrição"/><br>
+            Vendedor: <input type="number" required data-required-msg="Informe o vendedor" ng-model="leilao.vendedor" class="k-textbox" placeholder="vendedor"/><br>
+            Início Previsto: <input type="date" class="k-textbox" required data-required-msg="Informe uma previsão de início" ng-model="leilao.createdAt" placeholder="dd/mm/aaaa"/><br>
+            <input type="button" ng-click="visivel = adicionaLeilao() " onClick="document.location.reload(true)" value="Cadastrar"/>
+        </form>
+    </div>
+</div>

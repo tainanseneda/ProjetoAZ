@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="appAz">
+<head>
+    <title>AZ</title>
+    <meta charset="utf-8">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/kendoui/js/kendo.all.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/kendoui/src/styles/web/kendo.common.css">
+    <link rel="stylesheet" type="text/css" href="vendor/kendoui/src/styles/web/kendo.bootstrap.css">
+
+</head>
+
+<body>
+    <section id="menuSection">
+        <div>
+            <ul id="menu">
+                <li ng-class="{active: activetab == '/empresa'}"><a href="#/empresa">Empresas</a></li>
+                <li ng-class="{active: activetab == '/leilao'}"><a href="#/leilao">Leilão</a></li>
+                <li ng-class="{active: activetab == '/unidade'}"><a href="#/unidade">Unidade</a></li>
+                <li ng-class="{active: activetab == '/lote'}"><a href="#/lote">Lote</a></li>
+                <li ng-class="{active: activetab == '/comprador'}"><a href="#/comprador">Comprador</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="root" ng-view>
+
+    </section>
+
+    <script src="unidade/unidadeCtrl.js"></script>
+    <script src="empresa/empresaCtrl.js"></script>
+    <script src="leilao/leilaoCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "az-avaliacao",
+  "version": "1.0.0",
+  "description": "Projeto para avaliação e seleção de candidatos a programadores javascript.",
+  "authors": [
+    "cviegas <cviegas@azi.net.br>"
+  ],
+  "main": "assets/app/main.js",
+  "moduleType": [],
+  "license": "Todos direitos reservados a AZ Informática",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "angular": "1.3.x",
+    "angular-route": "1.3.x",
+    "kendoui": "http://git.azi.com.br/az-reuso/kendoui.git#v2015.2.805"
+  }
+}
